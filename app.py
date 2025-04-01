@@ -17,6 +17,15 @@ def salvar(caminho, dados):
     with open(caminho, "w") as f:
         json.dump(dados, f, indent=2)
 
+# Criação automática dos arquivos se não existirem
+for arquivo in [ARQUIVO_CHAVES, ARQUIVO_LOGS, ARQUIVO_ATUALIZACOES]:
+    if not os.path.exists(arquivo):
+        salvar(arquivo, {})
+
+@app.route("/")
+def index():
+    return "Servidor SW Online"
+
 # ──────────────── 1. CHAVES ────────────────
 
 @app.route("/criar", methods=["POST"])
@@ -246,7 +255,6 @@ def suspender():
 def alerta():
     chave = request.json["chave"]
     mensagem = request.json["mensagem"]
-    # Aqui seria para integrar com um alerta no sistema do cliente
     return jsonify({"sucesso": True, "mensagem": f"Alerta para {chave}: {mensagem}"})
 
 # ────────────────────────────────────────────
