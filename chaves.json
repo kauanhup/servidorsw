@@ -1,8 +1,23 @@
 {
   "ABC123": {
-    "validade": "2025-04-01"
+    "validade": "2025-04-01 12:00:00",
+    "contato": "@kauan",
+    "limite": 3,
+    "usos": [],
+    "bloqueada": false
   },
   "TESTE01": {
-    "validade": "2025-12-31"
+    "validade": "2025-12-31 23:59:59",
+    "contato": "@teste",
+    "limite": 5,
+    "usos": ["PC1", "PC2"],
+    "bloqueada": false
+  },
+  "EXEMPLOVIP": {
+    "validade": "vitalicio",
+    "contato": "@vipuser",
+    "limite": 2,
+    "usos": [],
+    "bloqueada": false
   }
 }
