@@ -17,7 +17,7 @@ def salvar(caminho, dados):
     with open(caminho, "w") as f:
         json.dump(dados, f, indent=2)
 
-# Criação automática dos arquivos se não existirem
+# Criação automática dos arquivos
 for arquivo in [ARQUIVO_CHAVES, ARQUIVO_LOGS, ARQUIVO_ATUALIZACOES]:
     if not os.path.exists(arquivo):
         salvar(arquivo, {})
@@ -26,7 +26,7 @@ for arquivo in [ARQUIVO_CHAVES, ARQUIVO_LOGS, ARQUIVO_ATUALIZACOES]:
 def index():
     return "Servidor SW Online"
 
-# ──────────────── 1. CHAVES ────────────────
+# ─────── 1. CHAVES ───────
 
 @app.route("/criar", methods=["POST"])
 def criar():
@@ -62,21 +62,6 @@ def criar():
 def listar():
     return jsonify(carregar(ARQUIVO_CHAVES))
 
-@app.route("/clientes/estatisticas", methods=["GET"])
-def estatisticas_cliente():
-    chave = request.args.get("chave")
-    chaves = carregar(ARQUIVO_CHAVES)
-    if chave in chaves:
-        info = chaves[chave]
-        return jsonify({
-            "dispositivos": info["usos"],
-            "limite": info["limite"],
-            "validade": info["validade"],
-            "contato": info["contato"],
-            "bloqueada": info.get("bloqueada", False)
-        })
-    return jsonify({"erro": "Chave não encontrada"}), 404
-    
 @app.route("/editar", methods=["POST"])
 def editar():
     data = request.json
@@ -89,26 +74,6 @@ def editar():
         salvar(ARQUIVO_CHAVES, chaves)
         return jsonify({"sucesso": True})
     return jsonify({"erro": "Chave não encontrada"}), 404
-
-@app.route("/suspeitas")
-def suspeitas():
-    chaves = carregar(ARQUIVO_CHAVES)
-    resultado = {
-        c: info for c, info in chaves.items()
-        if len(info["usos"]) > info["limite"]
-    }
-    return jsonify(resultado)
-
-@app.route("/desconectar", methods=["POST"])
-def desconectar():
-    chave = request.json["chave"]
-    dispositivo = request.json["dispositivo"]
-    chaves = carregar(ARQUIVO_CHAVES)
-    if chave in chaves and dispositivo in chaves[chave]["usos"]:
-        chaves[chave]["usos"].remove(dispositivo)
-        salvar(ARQUIVO_CHAVES, chaves)
-        return jsonify({"sucesso": True})
-    return jsonify({"erro": "Dispositivo ou chave não encontrados"}), 404
 
 @app.route("/bloquear", methods=["POST"])
 def bloquear():
@@ -142,7 +107,23 @@ def resetar():
         return jsonify({"sucesso": True})
     return jsonify({"erro": "Chave não encontrada"}), 404
 
-# ──────────────── 2. ATUALIZAÇÕES ────────────────
+@app.route("/suspeitas")
+def suspeitas():
+    chaves = carregar(ARQUIVO_CHAVES)
+    return jsonify({k: v for k, v in chaves.items() if len(v["usos"]) > v["limite"]})
+
+@app.route("/desconectar", methods=["POST"])
+def desconectar():
+    chave = request.json["chave"]
+    dispositivo = request.json["dispositivo"]
+    chaves = carregar(ARQUIVO_CHAVES)
+    if chave in chaves and dispositivo in chaves[chave]["usos"]:
+        chaves[chave]["usos"].remove(dispositivo)
+        salvar(ARQUIVO_CHAVES, chaves)
+        return jsonify({"sucesso": True})
+    return jsonify({"erro": "Dispositivo ou chave não encontrados"}), 404
+
+# ─────── 2. ATUALIZAÇÕES ───────
 
 @app.route("/atualizacao/lancar", methods=["POST"])
 def lancar_atualizacao():
@@ -170,7 +151,7 @@ def remover_atualizacao():
         return jsonify({"sucesso": True})
     return jsonify({"erro": "ID não encontrado"}), 404
 
-# ──────────────── 3. SEGURANÇA ────────────────
+# ─────── 3. SEGURANÇA ───────
 
 @app.route("/log", methods=["POST"])
 def registrar_log():
@@ -178,7 +159,8 @@ def registrar_log():
     entrada = {
         "tipo": request.json["tipo"],
         "mensagem": request.json["mensagem"],
-        "hora": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        "hora": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "dispositivo": request.json.get("dispositivo", "???")
     }
     logs[str(len(logs) + 1)] = entrada
     salvar(ARQUIVO_LOGS, logs)
@@ -192,25 +174,18 @@ def ver_logs():
 def filtrar_logs():
     tipo = request.args.get("tipo")
     logs = carregar(ARQUIVO_LOGS)
-    filtrados = {
-        k: v for k, v in logs.items() if v["tipo"] == tipo
-    }
-    return jsonify(filtrados)
+    return jsonify({k: v for k, v in logs.items() if v["tipo"] == tipo})
 
-# ──────────────── 4. SISTEMA ────────────────
+# ─────── 4. SISTEMA ───────
 
 @app.route("/sistema/info")
 def sistema_info():
     chaves = carregar(ARQUIVO_CHAVES)
     logs = carregar(ARQUIVO_LOGS)
-    total_chaves = len(chaves)
-    total_logs = len(logs)
-    dispositivos_unicos = len({
-        d for c in chaves.values() for d in c["usos"]
-    })
+    dispositivos_unicos = len({d for c in chaves.values() for d in c["usos"]})
     return jsonify({
-        "total_chaves": total_chaves,
-        "total_logs": total_logs,
+        "total_chaves": len(chaves),
+        "total_logs": len(logs),
         "dispositivos_unicos": dispositivos_unicos
     })
 
@@ -222,27 +197,26 @@ def backup():
         "atualizacoes": carregar(ARQUIVO_ATUALIZACOES)
     })
 
-# ──────────────── 5. CLIENTES ────────────────
+# ─────── 5. CLIENTES ───────
 
 @app.route("/clientes/buscar", methods=["GET"])
 def buscar_cliente():
     contato = request.args.get("contato")
     chaves = carregar(ARQUIVO_CHAVES)
-    resultado = {
-        c: v for c, v in chaves.items() if v["contato"] == contato
-    }
-    return jsonify(resultado)
+    return jsonify({c: v for c, v in chaves.items() if v["contato"] == contato})
 
 @app.route("/clientes/estatisticas", methods=["GET"])
 def estatisticas_cliente():
     chave = request.args.get("chave")
     chaves = carregar(ARQUIVO_CHAVES)
     if chave in chaves:
+        info = chaves[chave]
         return jsonify({
-            "dispositivos": chaves[chave]["usos"],
-            "limite": chaves[chave]["limite"],
-            "validade": chaves[chave]["validade"],
-            "contato": chaves[chave]["contato"]
+            "dispositivos": info["usos"],
+            "limite": info["limite"],
+            "validade": info["validade"],
+            "contato": info["contato"],
+            "bloqueada": info.get("bloqueada", False)
         })
     return jsonify({"erro": "Chave não encontrada"}), 404
 
@@ -262,7 +236,7 @@ def alerta():
     mensagem = request.json["mensagem"]
     return jsonify({"sucesso": True, "mensagem": f"Alerta para {chave}: {mensagem}"})
 
-# ────────────────────────────────────────────
+# ────────────
 
 if __name__ == "__main__":
     from os import environ
