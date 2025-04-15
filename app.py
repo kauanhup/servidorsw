@@ -62,16 +62,21 @@ def criar():
 def listar():
     return jsonify(carregar(ARQUIVO_CHAVES))
 
-@app.route("/excluir", methods=["POST"])
-def excluir():
-    chave = request.json["chave"]
+@app.route("/clientes/estatisticas", methods=["GET"])
+def estatisticas_cliente():
+    chave = request.args.get("chave")
     chaves = carregar(ARQUIVO_CHAVES)
     if chave in chaves:
-        del chaves[chave]
-        salvar(ARQUIVO_CHAVES, chaves)
-        return jsonify({"sucesso": True})
+        info = chaves[chave]
+        return jsonify({
+            "dispositivos": info["usos"],
+            "limite": info["limite"],
+            "validade": info["validade"],
+            "contato": info["contato"],
+            "bloqueada": info.get("bloqueada", False)
+        })
     return jsonify({"erro": "Chave não encontrada"}), 404
-
+    
 @app.route("/editar", methods=["POST"])
 def editar():
     data = request.json
