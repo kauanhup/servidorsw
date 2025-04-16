@@ -4,11 +4,6 @@ import os, json, base64, requests
 
 app = Flask(__name__)
 
-# Arquivos locais
-ARQUIVO_CHAVES = "chaves.json"
-ARQUIVO_LOGS = "logs.json"
-ARQUIVO_ATUALIZACOES = "atualizacoes.json"
-
 # GitHub API
 GITHUB_REPO = "kauanhup/servidorsw"
 CHAVES_PATH = "chaves.json"
@@ -34,21 +29,6 @@ def salvar_arquivo_github(caminho, dados, sha, msg="Atualização pela Render"):
         "sha": sha
     })
     return r.status_code == 200
-
-# Funções locais
-def carregar(caminho):
-    if not os.path.exists(caminho):
-        return {}
-    with open(caminho, "r") as f:
-        return json.load(f)
-
-def salvar(caminho, dados):
-    with open(caminho, "w") as f:
-        json.dump(dados, f, indent=2)
-
-for arquivo in [ARQUIVO_CHAVES, ARQUIVO_LOGS, ARQUIVO_ATUALIZACOES]:
-    if not os.path.exists(arquivo):
-        salvar(arquivo, {})
 
 @app.route("/")
 def index():
@@ -147,11 +127,10 @@ def desconectar():
         return jsonify({"sucesso": True})
     return jsonify({"erro": "Dispositivo ou chave não encontrados"}), 404
 
-# ─────── LOGS ───────
+# ─────── LOGS (somente GitHub) ───────
 
 @app.route("/log", methods=["POST"])
 def registrar_log():
-    logs_local = carregar(ARQUIVO_LOGS)
     logs_github, sha = carregar_arquivo_github(LOGS_PATH)
 
     nova_entrada = {
@@ -161,26 +140,21 @@ def registrar_log():
         "dispositivo": request.json.get("dispositivo", "???")
     }
 
-    # Local
-    logs_local[str(len(logs_local) + 1)] = nova_entrada
-    salvar(ARQUIVO_LOGS, logs_local)
-
-    # GitHub
     logs_github[str(len(logs_github) + 1)] = nova_entrada
     salvar_arquivo_github(LOGS_PATH, logs_github, sha, "Novo log registrado")
-
     return jsonify({"sucesso": True})
 
 @app.route("/logs")
 def ver_logs():
-    return jsonify(carregar(ARQUIVO_LOGS))
+    logs, _ = carregar_arquivo_github(LOGS_PATH)
+    return jsonify(logs)
 
 # ─────── SISTEMA ───────
 
 @app.route("/sistema/info")
 def sistema_info():
     chaves, _ = carregar_arquivo_github(CHAVES_PATH)
-    logs = carregar(ARQUIVO_LOGS)
+    logs, _ = carregar_arquivo_github(LOGS_PATH)
     dispositivos_unicos = len({d for c in chaves.values() for d in c["usos"]})
     return jsonify({
         "total_chaves": len(chaves),
