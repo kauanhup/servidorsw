@@ -10,13 +10,23 @@
     "validade": "2025-12-31 23:59:59",
     "contato": "@teste",
     "limite": 5,
-    "usos": ["PC1", "PC2"],
+    "usos": [
+      "PC1",
+      "PC2"
+    ],
     "bloqueada": false
   },
   "EXEMPLOVIP": {
     "validade": "vitalicio",
     "contato": "@vipuser",
     "limite": 2,
+    "usos": [],
+    "bloqueada": false
+  },
+  "oies": {
+    "validade": "2",
+    "contato": "oiest",
+    "limite": 3,
     "usos": [],
     "bloqueada": false
   }
