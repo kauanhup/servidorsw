@@ -23,6 +23,6 @@
       "localhost",
       "EC2AMAZ-RQJAK56"
     ],
-    "bloqueada": false
+    "bloqueada": true
   }
 }
