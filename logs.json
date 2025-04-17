@@ -212,5 +212,18 @@
     "versao": "3.12.9",
     "status": "indefinido",
     "origem": "extrair_zip"
+  },
+  "18": {
+    "tipo": "chave-invalida",
+    "mensagem": "Chave inv\u00e1lida: testeee",
+    "hora": "2025-04-17 16:10:03",
+    "dispositivo": "EC2AMAZ-RQJAK56",
+    "chave": "testeee",
+    "ip": "3.129.36.142",
+    "localizacao": "Columbus - Ohio, US",
+    "sistema": "Windows",
+    "versao": "3.13.2",
+    "status": "falhou",
+    "origem": "desconhecida"
   }
 }
