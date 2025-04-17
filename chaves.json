@@ -20,7 +20,8 @@
     "contato": "sd",
     "limite": 5,
     "usos": [
-      "localhost"
+      "localhost",
+      "EC2AMAZ-RQJAK56"
     ],
     "bloqueada": false
   }
