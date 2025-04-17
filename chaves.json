@@ -1,1 +1,9 @@
-{}
+{
+  "ninja": {
+    "validade": "vitalicio",
+    "contato": "telegran",
+    "limite": 4,
+    "usos": [],
+    "bloqueada": false
+  }
+}
