@@ -498,5 +498,18 @@
     "versao": "3.13.2",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "40": {
+    "tipo": "erro",
+    "mensagem": "Erro ao extrair ZIP",
+    "hora": "2025-04-17 17:56:30",
+    "dispositivo": "EC2AMAZ-RQJAK56",
+    "chave": "desconhecida",
+    "ip": "3.129.36.142",
+    "localizacao": "Columbus - Ohio, US",
+    "sistema": "Windows",
+    "versao": "3.13.2",
+    "status": "falhou",
+    "origem": "extrair_zip"
   }
 }
