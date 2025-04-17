@@ -13,6 +13,6 @@
     "usos": [
       "localhost"
     ],
-    "bloqueada": true
+    "bloqueada": false
   }
 }
