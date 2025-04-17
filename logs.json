@@ -95,5 +95,18 @@
     "versao": "3.12.9",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "9": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: testee",
+    "hora": "2025-04-17 11:33:43",
+    "dispositivo": "localhost",
+    "chave": "testee",
+    "ip": "177.222.236.56",
+    "localizacao": "Barra do Bugres - Mato Grosso, BR",
+    "sistema": "Linux",
+    "versao": "3.12.9",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
