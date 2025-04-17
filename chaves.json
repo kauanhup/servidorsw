@@ -5,5 +5,12 @@
     "limite": 4,
     "usos": [],
     "bloqueada": false
+  },
+  "teste": {
+    "validade": "2025-04-16 23:48:25",
+    "contato": "testez",
+    "limite": 2,
+    "usos": [],
+    "bloqueada": false
   }
 }
