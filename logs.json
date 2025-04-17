@@ -394,5 +394,18 @@
     "versao": "3.13.2",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "32": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: testee",
+    "hora": "2025-04-17 17:16:21",
+    "dispositivo": "EC2AMAZ-RQJAK56",
+    "chave": "testee",
+    "ip": "3.129.36.142",
+    "localizacao": "Columbus - Ohio, US",
+    "sistema": "Windows",
+    "versao": "3.13.2",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
