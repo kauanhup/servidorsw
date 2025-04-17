@@ -19,7 +19,9 @@
     "validade": "2025-04-20 11:09:47",
     "contato": "sd",
     "limite": 5,
-    "usos": [],
+    "usos": [
+      "localhost"
+    ],
     "bloqueada": false
   }
 }
