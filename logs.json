@@ -1,1 +1,8 @@
-{}
+{
+  "1": {
+    "tipo": "modificacao",
+    "mensagem": "Arquivo modificado: /storage/emulated/0/Download/iniciador.py",
+    "hora": "2025-04-16 21:57:23",
+    "dispositivo": "localhost"
+  }
+}
