@@ -24,5 +24,12 @@
       "EC2AMAZ-RQJAK56"
     ],
     "bloqueada": false
+  },
+  "MANINHO": {
+    "validade": "2025-04-19 19:20:32",
+    "contato": "81992252186",
+    "limite": 3,
+    "usos": [],
+    "bloqueada": false
   }
 }
