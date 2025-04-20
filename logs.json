@@ -654,5 +654,18 @@
     "versao": "3.13.2",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "52": {
+    "tipo": "erro",
+    "mensagem": "Erro ao verificar a chave",
+    "hora": "2025-04-20 13:55:00",
+    "dispositivo": "Fernanda",
+    "chave": "MANINHO",
+    "ip": "170.246.165.24",
+    "localizacao": "Carpina - Pernambuco, BR",
+    "sistema": "Windows",
+    "versao": "3.13.3",
+    "status": "falhou",
+    "origem": "verificar_chave"
   }
 }
