@@ -706,5 +706,18 @@
     "versao": "3.13.3",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "56": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: maninho",
+    "hora": "2025-04-20 14:35:52",
+    "dispositivo": "Fernanda",
+    "chave": "maninho",
+    "ip": "170.246.165.24",
+    "localizacao": "Carpina - Pernambuco, BR",
+    "sistema": "Windows",
+    "versao": "3.13.3",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
