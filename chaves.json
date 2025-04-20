@@ -3,7 +3,9 @@
     "validade": "vitalicio",
     "contato": "@ninjadobonus01",
     "limite": 4,
-    "usos": [],
+    "usos": [
+      "DESKTOP-744U9ND"
+    ],
     "bloqueada": false
   },
   "teste": {
