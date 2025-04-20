@@ -693,5 +693,18 @@
     "versao": "3.13.3",
     "status": "falhou",
     "origem": "verificar_chave"
+  },
+  "55": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: maninho",
+    "hora": "2025-04-20 14:14:11",
+    "dispositivo": "Fernanda",
+    "chave": "maninho",
+    "ip": "desconhecido",
+    "localizacao": "desconhecido",
+    "sistema": "Windows",
+    "versao": "3.13.3",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
