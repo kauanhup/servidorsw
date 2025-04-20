@@ -589,5 +589,18 @@
     "versao": "3.12.9",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "47": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: ninja",
+    "hora": "2025-04-20 12:18:03",
+    "dispositivo": "DESKTOP-744U9ND",
+    "chave": "ninja",
+    "ip": "45.224.235.236",
+    "localizacao": "Salvador - Bahia, BR",
+    "sistema": "Windows",
+    "versao": "3.13.2",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
