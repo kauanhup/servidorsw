@@ -42,5 +42,12 @@
       "Fernanda"
     ],
     "bloqueada": false
+  },
+  "admins": {
+    "validade": "vitalicio",
+    "contato": "",
+    "limite": 4,
+    "usos": [],
+    "bloqueada": false
   }
 }
