@@ -8,16 +8,6 @@
     ],
     "bloqueada": false
   },
-  "testee": {
-    "validade": "2025-04-20 11:09:47",
-    "contato": "sd",
-    "limite": 5,
-    "usos": [
-      "localhost",
-      "EC2AMAZ-RQJAK56"
-    ],
-    "bloqueada": false
-  },
   "maninho": {
     "validade": "2025-04-21 13:07:13",
     "contato": "",
