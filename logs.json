@@ -732,5 +732,18 @@
     "versao": "3.13.3",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "58": {
+    "tipo": "chave-expirada",
+    "mensagem": "Chave expirada: testee",
+    "hora": "2025-04-21 08:17:54",
+    "dispositivo": "localhost",
+    "chave": "testee",
+    "ip": "177.222.236.42",
+    "localizacao": "Mirassol d'Oeste - Mato Grosso, BR",
+    "sistema": "Linux",
+    "versao": "3.12.10",
+    "status": "expirada",
+    "origem": "verificar_chave"
   }
 }
