@@ -47,7 +47,9 @@
     "validade": "vitalicio",
     "contato": "",
     "limite": 4,
-    "usos": [],
+    "usos": [
+      "localhost"
+    ],
     "bloqueada": false
   }
 }
