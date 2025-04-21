@@ -8,15 +8,6 @@
     ],
     "bloqueada": false
   },
-  "teste": {
-    "validade": "2025-04-16 23:48:25",
-    "contato": "testez",
-    "limite": 2,
-    "usos": [
-      "localhost"
-    ],
-    "bloqueada": false
-  },
   "testee": {
     "validade": "2025-04-20 11:09:47",
     "contato": "sd",
