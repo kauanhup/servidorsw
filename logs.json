@@ -836,5 +836,18 @@
     "versao": "3.13.3",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "66": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: eduardo1ty7",
+    "hora": "2025-04-22 19:07:15",
+    "dispositivo": "DESKTOP-JQP7FUS",
+    "chave": "eduardo1ty7",
+    "ip": "51.159.195.193",
+    "localizacao": "Rosny-sous-Bois - \u00cele-de-France, FR",
+    "sistema": "Windows",
+    "versao": "3.13.3",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
