@@ -862,5 +862,18 @@
     "versao": "3.13.3",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "68": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: eduardo1ty7",
+    "hora": "2025-04-22 19:22:09",
+    "dispositivo": "DESKTOP-JQP7FUS",
+    "chave": "eduardo1ty7",
+    "ip": "45.183.119.90",
+    "localizacao": "Francisco Morato - S\u00e3o Paulo, BR",
+    "sistema": "Windows",
+    "versao": "3.13.3",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
