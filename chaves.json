@@ -25,5 +25,12 @@
       "localhost"
     ],
     "bloqueada": false
+  },
+  "eduardo1ty7": {
+    "validade": "2025-04-23 12:52:56",
+    "contato": "@Davd892",
+    "limite": 3,
+    "usos": [],
+    "bloqueada": false
   }
 }
