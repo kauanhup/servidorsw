@@ -1109,5 +1109,18 @@
     "versao": "3.12.10",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "87": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: admins",
+    "hora": "2025-04-22 19:12:18",
+    "dispositivo": "localhost",
+    "chave": "admins",
+    "ip": "201.87.237.215",
+    "localizacao": "Umuarama - Paran\u00e1, BR",
+    "sistema": "Linux",
+    "versao": "3.12.10",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
