@@ -1187,5 +1187,18 @@
     "versao": "3.13.2",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "93": {
+    "tipo": "chave-expirada",
+    "mensagem": "Chave expirada: eduardo1ty7",
+    "hora": "2025-04-23 17:55:38",
+    "dispositivo": "DESKTOP-JQP7FUS",
+    "chave": "eduardo1ty7",
+    "ip": "51.159.195.187",
+    "localizacao": "Rosny-sous-Bois - \u00cele-de-France, FR",
+    "sistema": "Windows",
+    "versao": "3.13.3",
+    "status": "expirada",
+    "origem": "verificar_chave"
   }
 }
