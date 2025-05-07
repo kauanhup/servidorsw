@@ -1590,5 +1590,18 @@
     "versao": "3.12.10",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "124": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: admins",
+    "hora": "2025-05-06 20:11:00",
+    "dispositivo": "localhost",
+    "chave": "admins",
+    "ip": "177.222.239.19",
+    "localizacao": "Mirassol d'Oeste - Mato Grosso, BR",
+    "sistema": "Linux",
+    "versao": "3.12.10",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
