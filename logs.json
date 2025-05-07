@@ -1681,5 +1681,18 @@
     "versao": "3.12.10",
     "status": "falhou",
     "origem": "extrair_zip"
+  },
+  "131": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: maninho",
+    "hora": "2025-05-06 21:05:24",
+    "dispositivo": "localhost",
+    "chave": "maninho",
+    "ip": "177.222.239.19",
+    "localizacao": "Mirassol d'Oeste - Mato Grosso, BR",
+    "sistema": "Linux",
+    "versao": "3.12.10",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
