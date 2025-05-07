@@ -1902,5 +1902,18 @@
     "versao": "3.13.2",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "148": {
+    "tipo": "erro",
+    "mensagem": "Erro ao extrair ZIP",
+    "hora": "2025-05-07 17:23:23",
+    "dispositivo": "DESKTOP-744U9ND",
+    "chave": "desconhecida",
+    "ip": "45.224.234.143",
+    "localizacao": "Salvador - Bahia, BR",
+    "sistema": "Windows",
+    "versao": "3.13.2",
+    "status": "falhou",
+    "origem": "extrair_zip"
   }
 }
