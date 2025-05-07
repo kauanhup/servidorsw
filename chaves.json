@@ -13,7 +13,8 @@
     "contato": "",
     "limite": 3,
     "usos": [
-      "Fernanda"
+      "Fernanda",
+      "localhost"
     ],
     "bloqueada": false
   },
