@@ -2032,5 +2032,18 @@
     "versao": "3.13.2",
     "status": "falhou",
     "origem": "verificar_chave"
+  },
+  "158": {
+    "tipo": "chave-invalida",
+    "mensagem": "Chave inv\u00e1lida: pip3 install pyfiglet",
+    "hora": "2025-05-08 15:31:32",
+    "dispositivo": "DESKTOP-744U9ND",
+    "chave": "pip3 install pyfiglet",
+    "ip": "45.224.235.225",
+    "localizacao": "Salvador - Bahia, BR",
+    "sistema": "Windows",
+    "versao": "3.13.2",
+    "status": "falhou",
+    "origem": "verificar_chave"
   }
 }
