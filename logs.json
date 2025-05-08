@@ -1967,5 +1967,18 @@
     "versao": "3.12.10",
     "status": "falhou",
     "origem": "verificar_chave"
+  },
+  "153": {
+    "tipo": "chave-invalida",
+    "mensagem": "Chave inv\u00e1lida: admina",
+    "hora": "2025-05-08 10:07:50",
+    "dispositivo": "localhost",
+    "chave": "admina",
+    "ip": "191.210.252.220",
+    "localizacao": "Cuiab\u00e1 - Mato Grosso, BR",
+    "sistema": "Linux",
+    "versao": "3.12.10",
+    "status": "falhou",
+    "origem": "verificar_chave"
   }
 }
