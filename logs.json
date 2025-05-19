@@ -2578,5 +2578,18 @@
     "versao": "3.12.10",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "200": {
+    "tipo": "verificacao",
+    "mensagem": "Chave verificada com sucesso: admins",
+    "hora": "2025-05-18 21:48:16",
+    "dispositivo": "localhost",
+    "chave": "admins",
+    "ip": "187.63.145.46",
+    "localizacao": "Macei\u00f3 - Alagoas, BR",
+    "sistema": "Linux",
+    "versao": "3.12.10",
+    "status": "sucesso",
+    "origem": "verificar_chave"
   }
 }
