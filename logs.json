@@ -2552,5 +2552,18 @@
     "versao": "3.12.10",
     "status": "sucesso",
     "origem": "verificar_chave"
+  },
+  "198": {
+    "tipo": "erro",
+    "mensagem": "Erro ao extrair ZIP",
+    "hora": "2025-05-18 21:47:32",
+    "dispositivo": "localhost",
+    "chave": "desconhecida",
+    "ip": "187.63.145.46",
+    "localizacao": "Macei\u00f3 - Alagoas, BR",
+    "sistema": "Linux",
+    "versao": "3.12.10",
+    "status": "falhou",
+    "origem": "extrair_zip"
   }
 }
